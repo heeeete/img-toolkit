@@ -1,6 +1,15 @@
 import { useState } from 'react';
 import { downloadBlob, replaceFormat } from '~/lib/utils';
 
+const DEV_API_BASE = '/python'; // 로컬 개발 서버(proxy)용
+const PROD_API_BASE = 'https://img-toolkit-api.onrender.com'; // Render에 올라간 Flask API 도메인
+
+export const API_BASE = import.meta.env.PROD /* Vite가 prod build했을 때 true */
+  ? PROD_API_BASE
+  : DEV_API_BASE;
+
+console.log(import.meta.env.PROD);
+
 export default function RemoveBg() {
   const [image, setImages] = useState<File>();
 
@@ -17,7 +26,7 @@ export default function RemoveBg() {
     form.append('image', image);
 
     try {
-      const res = await fetch('/python/remove-background', {
+      const res = await fetch(`${API_BASE}/remove-background`, {
         method: 'POST',
         body: form,
         // 헤더에 Content-Type 직접 설정하지 마세요.
