@@ -8,7 +8,10 @@ export default defineConfig({
   server: {
     proxy: {
       '/python': {
-        target: 'http://127.0.0.1:8000',
+        target:
+          process.env.NODE_ENV === 'production'
+            ? 'https://img-toolkit-api.onrender.com'
+            : 'http://127.0.0.1:5000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/python/, ''), // ★ 필수
       },
