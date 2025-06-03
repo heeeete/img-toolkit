@@ -57,7 +57,7 @@ class handler(BaseHTTPRequestHandler):
             return
 
         # 5) rembg로 배경 제거
-        model_name = "isnet-general-use"
+        model_name = "u2net"
         try:
             session = new_session(model_name)
             result_bytes = remove(img_bytes, session=session)
