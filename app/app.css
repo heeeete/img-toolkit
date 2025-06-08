@@ -27,7 +27,20 @@
   --color-gray-scale: var(--gray-scale);
   --color-other-blue: var(--other-blue);
   --shadow-main: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.15);
   --drop-shadow-main: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+@layer components {
+  .header-gradient-left {
+    @apply bg-linear-to-r from-[#DFF2E4] via-[#EFF8F1] to-[#EFF8F1];
+  }
+  .header-gradient-center {
+    @apply bg-linear-to-r from-[#DFF2E4] via-[#EFF8F1] to-[#DFF2E4];
+  }
+  .header-gradient-right {
+    @apply bg-linear-to-r from-[#EFF8F1] via-[#EFF8F1] to-[#DFF2E4];
+  }
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

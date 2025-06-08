@@ -82,7 +82,7 @@ export default function Home() {
       <button onClick={handleCompress}>압축하기</button>
       <button onClick={handleDownload}>다운로드</button>
 
-      <p className="inline-flex text-sm whitespace-pre-wrap">
+      {/* <div className="inline-flex text-sm whitespace-pre-wrap">
         Beautiful templates for{' '}
         <TextLoop
           className="overflow-y-clip"
@@ -118,7 +118,7 @@ export default function Home() {
           <span>Designers</span>
           <span>Design Engineers</span>
         </TextLoop>
-      </p>
+      </div> */}
     </div>
   );
 }

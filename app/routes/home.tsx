@@ -7,6 +7,8 @@ import CompressButtonSVG from '~/components/svg/compress-button.svg?react';
 import CompressSVG from '~/components/svg/compress-icon.svg?react';
 import GreenBlobsSVG from '~/components/svg/green-blobs.svg?react';
 import BlueBlobsSVG from '~/components/svg/blue-blobs.svg?react';
+import { motion } from 'motion/react';
+import { TextLoop } from '~/components/ui/text-loop';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -45,7 +47,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="relative z-10 flex h-[calc(100dvh-124px)] items-center space-x-[100px]">
+      <div className="relative z-10 flex h-[calc(100dvh-124px)] items-center justify-center space-x-[100px]">
         <div className="space-y-14">
           <h1 className="w-[430px] typo-h1">무료로 다양한 이미지 편집을 해보세요</h1>
           <div className="space-y-4 typo-body-2">
@@ -59,10 +61,41 @@ export default function Home() {
             <span className="typo-button-1">이미지 배경 제거</span>
           </button>
           <div className="flex space-x-10">
-            <button className="relative drop-shadow-main">
+            <button className="relative flex items-center justify-center drop-shadow-main">
               <ConvertButtonSVG />
-              <div className="absolute top-0 left-0 flex h-full w-full flex-col items-center justify-center space-y-6">
-                <span className="text-[40px] font-semibold text-other-blue">JPG</span>
+              <div className="absolute flex w-full flex-col">
+                <TextLoop
+                  className="overflow-y-clip text-center text-[40px] font-semibold text-other-blue"
+                  transition={{
+                    type: 'spring',
+                    stiffness: 900,
+                    damping: 80,
+                    mass: 10,
+                  }}
+                  variants={{
+                    initial: {
+                      y: 20,
+                      rotateX: 90,
+                      opacity: 0,
+                      filter: 'blur(4px)',
+                    },
+                    animate: {
+                      y: 0,
+                      rotateX: 0,
+                      opacity: 1,
+                      filter: 'blur(0px)',
+                    },
+                    exit: {
+                      y: -20,
+                      rotateX: -90,
+                      opacity: 0,
+                      filter: 'blur(4px)',
+                    },
+                  }}
+                >
+                  <span>JPG</span>
+                  <span>WEBP</span>
+                </TextLoop>
                 <span className="typo-button-1">변환하기</span>
               </div>
             </button>
@@ -102,8 +135,33 @@ export default function Home() {
               <Link to="/image-format-conversion">이미지 포맷 변환 ㄱㄱ</Link>
               <Link to="/remove-bg">누끼따기 ㄱㄱ</Link> */}
       </div>
-      <BlueBlobsSVG className="absolute -top-[50px] -right-[300px] z-0" />
-      <GreenBlobsSVG className="absolute -bottom-[50px] -left-[300px] z-0" />
+      <motion.div
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          repeatType: 'reverse',
+          ease: 'easeInOut',
+        }}
+        className="absolute -top-[50px] -right-[300px] z-0"
+      >
+        <BlueBlobsSVG />
+      </motion.div>
+
+      <motion.div
+        initial={{ scale: 1 }}
+        animate={{ scale: 0.8 }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          repeatType: 'reverse',
+          ease: 'easeInOut',
+        }}
+        className="absolute -bottom-[50px] -left-[300px] z-0"
+      >
+        <GreenBlobsSVG />
+      </motion.div>
     </>
   );
 }
