@@ -1,0 +1,50 @@
+@utility typo-h1 {
+  font-weight: 500;
+  font-size: 50px;
+  letter-spacing: -3%;
+}
+
+@utility typo-button-1 {
+  font-weight: 500;
+  font-size: 30px;
+  letter-spacing: -3%;
+}
+
+@utility typo-button-2 {
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -3%;
+}
+
+@utility typo-button-3 {
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -3%;
+}
+
+@utility typo-button-4 {
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -3%;
+}
+
+@utility typo-body-1 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: 0%;
+}
+
+@utility typo-body-2 {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: 0%;
+}
+
+@utility typo-caption-1 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: -3%;
+}

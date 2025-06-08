@@ -1,17 +1,29 @@
 @import 'tailwindcss';
+:root {
+  font-family: Pretendard Variable;
+
+  --primary: #c9e9d2;
+  --secondary-blue: #ccdeed;
+  --secondary-orange: #ffba43;
+  --gray-scale: #191e1a;
+}
 
 @theme {
   --font-sans:
     'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --breakpoint-default: 1440px;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-secondary-blue: var(--secondary-blue);
+  --color-secondary-orange: var(--secondary-orange);
+  --color-gray-scale: var(--gray-scale);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
-
-@theme inline {
-  /* --color- */
-}
-
 html,
 body {
   @apply bg-white transition-colors duration-[1s] dark:bg-black dark:text-white;
