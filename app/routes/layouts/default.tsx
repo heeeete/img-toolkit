@@ -12,7 +12,7 @@ export default function DefaultLayout() {
           <Logo className="" />
         </Link>
 
-        <nav className="mx-auto w-full max-w-[800px]">
+        <nav className="relative z-50 mx-auto w-full max-w-[800px]">
           <ul className="flex flex-1 items-center justify-between gap-[5px]">
             <li className="flex-1 border">
               <Link
@@ -46,7 +46,7 @@ export default function DefaultLayout() {
           </ul>
         </nav>
       </header>
-      <div className="w-full max-w-[1440px] justify-center">
+      <div className="flex w-full max-w-[1440px] justify-center">
         <Outlet />
       </div>
     </main>
