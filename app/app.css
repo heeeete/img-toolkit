@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import './typo.css';
+
 :root {
   font-family: Pretendard Variable;
 
@@ -6,6 +8,7 @@
   --secondary-blue: #ccdeed;
   --secondary-orange: #ffba43;
   --gray-scale: #191e1a;
+  --other-blue: #3185d8;
 }
 
 @theme {
@@ -21,6 +24,9 @@
   --color-secondary-blue: var(--secondary-blue);
   --color-secondary-orange: var(--secondary-orange);
   --color-gray-scale: var(--gray-scale);
+  --color-other-blue: var(--other-blue);
+  --shadow-main: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --drop-shadow-main: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
