@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import './typo.css';
+
 :root {
   font-family: Pretendard Variable;
 

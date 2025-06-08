@@ -1,5 +1,6 @@
 import { Link, Outlet, useLocation } from 'react-router';
-import Logo from '~/components/svg/imgLogo.svg?react';
+import Logo from '~/components/svg/img-logo.svg?react';
+import { cn } from '~/lib/utils';
 
 export default function DefaultLayout() {
   const { pathname } = useLocation();
@@ -18,7 +19,12 @@ export default function DefaultLayout() {
                 이미지 배경 제거
               </Link>
             </li>
-            <li className="flex-1 border">
+            <li
+              className={cn(
+                'border transition-all',
+                pathname === '/image-format-conversion' ? 'flex-2' : 'flex-1',
+              )}
+            >
               <Link
                 to="/image-format-conversion"
                 className="inline-block w-full bg-amber-200 py-5"
