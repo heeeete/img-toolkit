@@ -27,6 +27,7 @@
   --color-gray-scale: var(--gray-scale);
   --color-other-blue: var(--other-blue);
   --shadow-main: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-header: 0 2px 10px rgba(0, 0, 0, 0.15);
   --drop-shadow-main: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
