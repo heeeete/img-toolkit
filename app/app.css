@@ -3,6 +3,7 @@
 
 :root {
   font-family: Pretendard Variable;
+  overflow: hidden;
 
   --primary: #c9e9d2;
   --secondary-blue: #ccdeed;
