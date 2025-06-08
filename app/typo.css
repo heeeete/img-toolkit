@@ -2,30 +2,35 @@
   font-weight: 500;
   font-size: 50px;
   letter-spacing: -3%;
+  line-height: 120%;
 }
 
 @utility typo-button-1 {
   font-weight: 500;
   font-size: 30px;
   letter-spacing: -3%;
+  line-height: 120%;
 }
 
 @utility typo-button-2 {
   font-weight: 600;
   font-size: 20px;
   letter-spacing: -3%;
+  line-height: 120%;
 }
 
 @utility typo-button-3 {
   font-weight: 500;
   font-size: 20px;
   letter-spacing: -3%;
+  line-height: 120%;
 }
 
 @utility typo-button-4 {
   font-weight: 400;
   font-size: 20px;
   letter-spacing: -3%;
+  line-height: 120%;
 }
 
 @utility typo-body-1 {
