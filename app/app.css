@@ -32,8 +32,14 @@
 }
 
 @layer components {
-  .header-gradient {
+  .header-gradient-left {
     @apply bg-linear-to-r from-[#DFF2E4] via-[#EFF8F1] to-[#EFF8F1];
+  }
+  .header-gradient-center {
+    @apply bg-linear-to-r from-[#DFF2E4] via-[#EFF8F1] to-[#DFF2E4];
+  }
+  .header-gradient-right {
+    @apply bg-linear-to-r from-[#EFF8F1] via-[#EFF8F1] to-[#DFF2E4];
   }
 }
 

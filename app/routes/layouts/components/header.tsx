@@ -17,7 +17,7 @@ export default function Header() {
             className={cn(
               'overflow-hidden shadow-header transition-all',
               pathname === '/remove-bg'
-                ? 'header-gradient flex-2 rounded-[80px]'
+                ? 'header-gradient-left flex-2 rounded-[80px]'
                 : 'flex-1 rounded-l-[80px] rounded-r-[10px]',
             )}
           >
@@ -29,7 +29,7 @@ export default function Header() {
             className={cn(
               'overflow-hidden shadow-header transition-all',
               pathname === '/image-format-conversion'
-                ? 'header-gradient flex-2 rounded-[80px]'
+                ? 'header-gradient-center flex-2 rounded-[80px]'
                 : 'flex-1 rounded-[10px]',
             )}
           >
@@ -44,7 +44,7 @@ export default function Header() {
             className={cn(
               'overflow-hidden shadow-header transition-all',
               pathname === '/image-compress'
-                ? 'header-gradient flex-2 rounded-[80px]'
+                ? 'header-gradient-right flex-2 rounded-[80px]'
                 : 'flex-1 rounded-l-[10px] rounded-r-[80px]',
             )}
           >
