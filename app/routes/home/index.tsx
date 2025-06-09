@@ -1,14 +1,11 @@
-import { Link } from 'react-router';
-import type { Route } from './+types/home';
+import type { Route } from './+types';
 import { useEffect, useState } from 'react';
 import RemoveBgSVG from '~/components/svg/remove-bg-icon.svg?react';
-import ConvertButtonSVG from '~/components/svg/convert-button.svg?react';
-import CompressButtonSVG from '~/components/svg/compress-button.svg?react';
-import CompressSVG from '~/components/svg/compress-icon.svg?react';
 import GreenBlobsSVG from '~/components/svg/green-blobs.svg?react';
 import BlueBlobsSVG from '~/components/svg/blue-blobs.svg?react';
 import { motion } from 'motion/react';
-import { TextLoop } from '~/components/ui/text-loop';
+import FormatConversionLink from './components/format-conversion-link';
+import CompressLink from './components/compress-link';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -61,51 +58,8 @@ export default function Home() {
             <span className="typo-button-1">이미지 배경 제거</span>
           </button>
           <div className="flex space-x-10">
-            <button className="relative flex items-center justify-center drop-shadow-main">
-              <ConvertButtonSVG />
-              <div className="absolute flex w-full flex-col">
-                <TextLoop
-                  className="overflow-y-clip text-center text-[40px] font-semibold text-other-blue"
-                  transition={{
-                    type: 'spring',
-                    stiffness: 900,
-                    damping: 80,
-                    mass: 10,
-                  }}
-                  variants={{
-                    initial: {
-                      y: 20,
-                      rotateX: 90,
-                      opacity: 0,
-                      filter: 'blur(4px)',
-                    },
-                    animate: {
-                      y: 0,
-                      rotateX: 0,
-                      opacity: 1,
-                      filter: 'blur(0px)',
-                    },
-                    exit: {
-                      y: -20,
-                      rotateX: -90,
-                      opacity: 0,
-                      filter: 'blur(4px)',
-                    },
-                  }}
-                >
-                  <span>JPG</span>
-                  <span>WEBP</span>
-                </TextLoop>
-                <span className="typo-button-1">변환하기</span>
-              </div>
-            </button>
-            <button className="relative drop-shadow-main">
-              <CompressButtonSVG />
-              <div className="absolute top-0 left-0 flex h-full w-full flex-col items-center justify-center space-y-6">
-                <CompressSVG />
-                <span className="typo-button-1">이미지 압축</span>
-              </div>
-            </button>
+            <FormatConversionLink />
+            <CompressLink />
           </div>
         </div>
         {/* <div className="fixed bottom-0 flex flex-col">
@@ -135,6 +89,7 @@ export default function Home() {
               <Link to="/image-format-conversion">이미지 포맷 변환 ㄱㄱ</Link>
               <Link to="/remove-bg">누끼따기 ㄱㄱ</Link> */}
       </div>
+
       <motion.div
         initial={{ scale: 0.8 }}
         animate={{ scale: 1 }}
